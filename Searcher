@@ -1,0 +1,70 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Searcher {
+  
+//binary (sorted first)   
+  public static boolean binarysearch(int[] inputArray, int key) {
+    int start = 0;
+    int end = inputArray.length - 1;
+
+    while (start <= end) {
+        int middle = (start + end) / 2;
+       
+        if (key == inputArray[middle]) {
+            return true;}
+
+    if (key < inputArray[middle]) {
+        end = middle - 1;} 
+    
+    else {start = middle + 1;}}
+    return false;}
+//sequential
+    public static boolean sequentialsearch(int[] array, int key){
+    int size = array.length;
+
+    for(int i=0;i<size;i++){
+        if(array[i] == key){
+            return true;}}
+    return false;}
+
+   public static void main(String[] args) {
+       Scanner scan = new Scanner(System.in);
+       String line = scan.nextLine();
+       String[] size = line.split("\\s+"); //splits by space
+
+       int data[] = new int[Integer.parseInt(size[0])]; //make 2 arrays, data & query
+       int query[] = new int[Integer.parseInt(size[1])];
+
+       for(int i=0;i<data.length; i++){ //read into data array
+           data[i] = scan.nextInt(); }
+
+       for(int i=0; i<query.length; i++){  //read into query array
+           query[i] = scan.nextInt();}
+
+       int d_copy[] = Arrays.copyOf(data, data.length);
+       Arrays.sort(d_copy); //have to sort the array data to do binary search
+
+       long start, end;
+       // searching each query element
+
+       for(int i=0; i<query.length; i++){
+       
+           start = System.currentTimeMillis();
+           boolean status1 = sequentialsearch(data, query[i]);
+           end = System.currentTimeMillis();
+           long seq_time = (end - start);
+           
+           start = System.currentTimeMillis();
+           boolean status2 = binarysearch(d_copy, query[i]);
+           end = System.currentTimeMillis();
+           long binary_time = (end - start);
+
+           System.out.println("Prep time:"); 
+           
+           //System.out.println(query[i]+" "+status1+":"+seq_time+" "+status2+":"+binary_time);
+           scan.close();
+           
+       }
+   }
+}
