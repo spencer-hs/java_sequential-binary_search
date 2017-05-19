@@ -8,7 +8,7 @@ using first a sequential search and then a binary search. Each method is timed, 
 it took to parse each query through the data array. The text file is read in through user command.
 
 The format of the text files is as follows, where the first number on the first line is how many rows after the initial is in the 
-data array, and the second number is how many rows following that which are in the query array:
+data array, and the second number is how many rows following that which are in the query array:                                           
 5 2                                                                                                                                       
 95                                                                                                                                         
 62                                                                                                                                         
