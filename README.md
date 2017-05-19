@@ -9,11 +9,11 @@ it took to parse each query through the data array. The text file is read in thr
 
 The format of the text files is as follows, where the first number on the first line is how many rows after the initial is in the 
 data array, and the second number is how many rows following that which are in the query array:
-5 2
-95
-62
-166
-113
-182
-94
+5 2                                                                                                                                       
+95                                                                                                                                         
+62                                                                                                                                         
+166                                                                                                                                       
+113                                                                                                                                       
+182                                                                                                                                       
+94                                                                                                                                        
 82
